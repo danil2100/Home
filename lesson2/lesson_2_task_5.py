@@ -1,13 +1,16 @@
-def  month_to_season(month):
+def month_to_season(month):
+    """Возвращает название сезона по номеру месяца."""
+    if not isinstance(month, int) or month < 1 or month > 12:
+        return 'Неверный номер месяца'
+
     if 1 <= month <= 2 or month == 12:
-        return "зима"
+        return 'зима'
     elif 3 <= month <= 5:
-        return "весна"
+        return 'весна'
     elif 6 <= month <= 8:
-        return "лето"
+        return 'лето'
     elif 9 <= month <= 11:
-        return "осень"
-    else:
-        return "Неверный номер месяца"
-print(month_to_season(2))  
-# Должно вернуть "Зима"
+        return 'осень'
+
+
+print(month_to_season(2))  # Должно вернуть "зима"
