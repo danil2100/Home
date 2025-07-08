@@ -8,6 +8,5 @@ catalog = [
     Smartphone(brand="Redmi", model="Note 12", number="+79129182726"),
 ]
 
-
 for smartphone in catalog:
-    print(f"{smartphone.brand} - {smartphone.model}. {smartphone.namber}.")
+    print(f"{smartphone.brand} - {smartphone.model}. {smartphone.number}.")
