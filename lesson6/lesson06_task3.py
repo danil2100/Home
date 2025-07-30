@@ -22,8 +22,6 @@ try:
     print("Загрузка завершена. Значение атрибута src у 3-й картинки:")
     print(f'"{third_image_src}"')
 
-    input("\nНажмите Enter, чтобы закрыть браузер")
-
 finally:
     driver.quit()
     print("Браузер закрыт")

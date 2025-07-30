@@ -34,8 +34,6 @@ try:
         print(f"Ожидалось: '{expected}'")
         print(f"Получено:  '{button_text}'")
 
-    input("\nНажмите Enter, чтобы закрыть браузер...")
-
 finally:
     driver.quit()
     print("Браузер закрыт")
