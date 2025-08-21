@@ -1,0 +1,16 @@
+
+# Разрешаем нужные папки
+!lesson8/
+!lesson8/test/
+
+# Разрешаем нужные файлы
+!lesson8/conftest.py
+!lesson8/test/test_projects_api.py
+!requirements.txt
+
+# Игнорируем мусор
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+*.env
