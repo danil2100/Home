@@ -12,7 +12,7 @@ if not API_KEY:
 BASE_URL = "https://ru.yougile.com/api-v2"
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
 }
 
 
@@ -29,16 +29,21 @@ def headers():
 @pytest.fixture
 def create_temp_project(base_url, headers):
     """Создаём временный проект и возвращаем его ID"""
-    project_data = {
-        "title": "Test Project (pytest)"  # ✅ Принимается API
-    }
-    response = requests.post(f"{base_url}/projects", json=project_data, headers=headers)
-    
-    assert response.status_code in [200, 201], f"Ошибка создания: {response.status_code}, {response.text}"
+    project_data = {"title": "Test Project (pytest)"}  # ✅ Принимается API
+    response = requests.post(
+        f"{base_url}/projects", json=project_data, headers=headers
+    )
+
+    assert response.status_code in [
+        200,
+        201,
+    ], f"Ошибка создания: {response.status_code}, {response.text}"
     response_json = response.json()
 
     # Извлекаем ID
-    project_id = response_json.get("data", {}).get("id") or response_json.get("id")
+    project_id = response_json.get("data", {}).get("id") or response_json.get(
+        "id"
+    )
     assert project_id, "Не удалось получить ID проекта из ответа"
 
     yield project_id
