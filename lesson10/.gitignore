@@ -1,0 +1,9 @@
+allure-results/
+allure-report/
+__pycache__/
+*.pyc
+msedgedriver.exe
+geckodriver.exe
+chromedriver.exe
+venv/
+env/
